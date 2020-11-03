@@ -65,9 +65,20 @@ function reducer(state, action) {
                 ...state,
                 total,
                 amount
-            }
+            };
+        case "LOADING":
+            return {
+                ...state,
+                loading: true
+            };
+        case "DISPLAY_ITEMS":
+            return {
+                ...state,
+                cart: action.payload,
+                loading: false
+            };
         default:
-            return state;
+            throw new Error("No matching action type.");
     }
 }
 

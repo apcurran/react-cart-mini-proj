@@ -19,6 +19,10 @@ function AppProvider({ children }) {
     dispatch({ type: "GET_TOTAL" });
   }, [state.cart]);
 
+  useEffect(() => {
+    getData();
+  }, []);
+
   function clearCart() {
     dispatch({ type: "CLEAR_CART" });
   }
